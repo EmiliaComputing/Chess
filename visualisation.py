@@ -86,17 +86,22 @@ class Game(arcade.Window):
     def on_mouse_release(self, x, y, buttons, modifiers):
         if  not self.held_piece:
             return
+        print("finding end_pos")
         self.end_pos = self.indices(x,  y)
-
+        print("end pos found")
         if self.held_piece.is_valid_move(self.start_pos, self.end_pos, self.chess_game):
+            print("starting if statement")
             self.chess_game.white_move += 1
             if self.chess_game.white_move ==2:
                 self.chess_game.white_move = 0
-
+            print("setting img position")
             self.held_piece_img.set_position(*self.coordinates(self.end_pos))
-
-            self.chess_game.set_piece(None, self.start_pos)
+            print("resetting start_pos")
+            self.chess_game.set_piece("", self.start_pos)
+            print("setting end pos")
             self.chess_game.set_piece(self.held_piece, self.end_pos)
+            print("displaying board")
+            self.chess_game.display()
 
             pieces = arcade.check_for_collision_with_list(self.held_piece_img, self.pieces)
 
@@ -113,17 +118,18 @@ class Game(arcade.Window):
                         piece.passant_count = 0
 
         else:
-          self.held_piece_img.set_position(*self.coordinates(self.start_pos))
+            self.held_piece_img.set_position(*self.coordinates(self.start_pos))
 
-          self.held_piece_img = None
-          self.held_piece = None
+            self.held_piece_img = None
+            self.held_piece = None
 
         for piece in self.chess_game.pieces:
           if piece.taken:
              self.chess_game.set_piece(None, piece.position)
              for image in self.pieces:
                  position = self.indices(image.center_x, image.center_y)
-                 if (position.i == piece.position.i) and (position.j == piece.position.j):
+                 print(f"image: {position}, piece: {piece.position}")
+                 if (position.i == piece.position.i - 1) and (position.j == piece.position.j - 1):
                      self.pieces.remove(image)
 
 game = Game()

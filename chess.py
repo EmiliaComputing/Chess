@@ -69,3 +69,7 @@ class Game:
 
     def get_piece(self, position):
         return self.board[position.j][position.i]
+
+    def display(self):
+        for row in self.board:
+            print(row)

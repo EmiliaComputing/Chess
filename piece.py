@@ -14,7 +14,7 @@ class Piece:
         return False
 
     def __repr__(self):
-        return f"{self.symbol}, {self.is_passantable}"
+        return f"{self.symbol}"
 
     def check_move_colour(self, white_move):
         return (self.colour == "Black" and white_move ==0 or
@@ -22,6 +22,6 @@ class Piece:
 
     def check_not_on_board(self, end_pos):
         return (end_pos.i >=8 or
-                end_pos.j >=9 or
+                end_pos.j >=8 or
                 end_pos.j <= -1 or
                 end_pos.i <= -1)

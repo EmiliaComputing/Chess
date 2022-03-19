@@ -1,0 +1,33 @@
+ERRORS/BUGS:
+    - promotion
+      if a piece is taken, promotion does not work
+
+    - pieces jumping over pieces
+
+SOLVED:
+    - 1/2 of the en passant problem
+      stopped en passant from working as the piece being taken would not be removed from the board
+      caused by a maths error
+      fixed by subtracting 2 from the maths (at the point where the pawn was removed rather than at the point where the variable was declared)
+
+    - promotion problem
+      problems with promotion including the piece not appearing
+      about line 140 - about line 180
+      fixed by appending to pieces
+
+FINISHED:
+    - piece movement
+      queen, king, knight, bishop, pawn
+
+    - display
+      display of the board and pieces
+
+TO ADD:
+    - castling
+
+    - checks & checkmate
+
+NOTES:
+  - I & J variables
+    The "i" coordinate = x coordinate
+    The "j" coordinate = y coordinate

@@ -1,4 +1,4 @@
-from piece import Piece
+from piece import Piece, Position
 
 class King(Piece):
     def __init__(self, colour, position):
@@ -15,10 +15,24 @@ class King(Piece):
         end_piece = board.get_piece(end_pos)
 
         if end_piece and end_piece.colour == self.colour:
-            return False 
+            return False
         if abs(j_difference) == 1 and abs(i_difference) == 1:
             return True
         elif abs(j_difference) == 1 and abs(i_difference) == 0:
             return True
         elif abs(j_difference) == 0 and abs(i_difference) == 1:
+            return True
+
+        #castling
+        kingside_rook = board.get_piece(Position(start_pos.i + 3, start_pos.j))
+        queenside_rook = board.get_piece(Position(start_pos.i - 4, start_pos.j))
+
+        if i_difference == -2 and abs(j_difference) == 0:
+            print("castling kingside")
+            kingside_rook.is_kingside_castling = True
+            return True
+
+        elif i_difference == 2 and abs(j_difference) == 0:
+            print("castling queenside")
+            queenside_rook.is_queenside_castling = True
             return True

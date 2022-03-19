@@ -4,6 +4,9 @@ class Rook(Piece):
     def __init__(self, colour, position):
         super().__init__(colour, position, "Rook", "R", False)
 
+        self.is_kingside_castling = False
+        self.is_queenside_castling = False
+
     def is_valid_move(self, start_pos, end_pos, board):
         if self.check_not_on_board(end_pos):
             return False

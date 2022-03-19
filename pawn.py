@@ -51,7 +51,6 @@ class Pawn(Piece):
                     right_piece.colour != self.colour and
                     right_piece.is_passantable):
                     right_piece.taken = True
-                    print("En passant")
                     return True
 
                 if (not end_piece and
@@ -59,7 +58,6 @@ class Pawn(Piece):
                     left_piece.colour != self.colour and
                     left_piece.is_passantable):
                     left_piece.taken = True
-                    print("En passant")
                     return True
 
         if (self.colour == "Black" and
@@ -90,7 +88,6 @@ class Pawn(Piece):
                     right_piece and
                     right_piece.colour != self.colour and
                     right_piece.is_passantable):
-                    print("En passant")
                     right_piece.taken = True
                     return True
 
@@ -98,6 +95,5 @@ class Pawn(Piece):
                     left_piece and
                     left_piece.colour != self.colour and
                     left_piece.is_passantable):
-                    print("En passant")
                     left_piece.taken = True
                     return True

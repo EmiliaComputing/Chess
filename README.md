@@ -24,33 +24,45 @@ There are not usually buttons on the screen, however, when a pawn is promoted, b
 Furthermore, the colours I have used for the chess board are light and dark grey as these are typical colours used on both online and real life chess boards. For the box which appears when a pawn is promoted, I used the colour “rhythm” from the arcade library which is a blue-grey colour, as I felt that it was visually appealing and looked pleasant against the colours which I used in the chess board.
 
 The following pseudocode shows how the rook piece moves:
-'''
+
 FOR z IN RANGE 8:
    y_difference = y position at start - y position at end
+   
    x_difference = x position at start - x position at end
+   
    end_piece = board.get_piece(the piece on the end square if any is present)
 
-
    IF absolute y_difference = z AND IF absolute x_difference = 0:
+   
       IF NOT end_piece:
+      
          RETURN TRUE
+         
       END IF
 
       IF end_piece AND end_piece NOT = colour of own pieces:
+      
          RETURN TRUE
+         
       END IF
+      
    END IF
 
    IF absolute x_difference = z AND IF absolute y_difference = 0:
+   
       IF NOT end_piece:
+      
          RETURN TRUE
+         
       END IF
 
       IF end_piece AND end_piece NOT = colour of own pieces:
+      
          RETURN TRUE
+         
       END IF
+      
    END IF
-'''
 
 ###  Issues during the project and how I resolved them
 Whilst creating this project, I encountered some errors including that there was also a problem which occurred when a pawn was promoted. This error resulted in problems such as the selected piece not appearing on the board. This was fixed by appending the pieces to the pieces list, thus allowing them to be visible on the screen.

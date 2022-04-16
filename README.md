@@ -25,50 +25,46 @@ Furthermore, the colours I have used for the chess board are light and dark grey
 
 The following pseudocode shows how the rook piece moves:
 
-''' 
+   FOR z IN RANGE 8:
 
-FOR z IN RANGE 8:
+      y_difference = y position at start - y position at end
+   
+      x_difference = x position at start - x position at end
+   
+      end_piece = board.get_piece(the piece on the end square if any is present)
 
-   y_difference = y position at start - y position at end
+      IF absolute y_difference = z AND IF absolute x_difference = 0:
    
-   x_difference = x position at start - x position at end
-   
-   end_piece = board.get_piece(the piece on the end square if any is present)
-
-   IF absolute y_difference = z AND IF absolute x_difference = 0:
-   
-      IF NOT end_piece:
+         IF NOT end_piece:
       
-         RETURN TRUE
+            RETURN TRUE
          
+         END IF
+
+         IF end_piece AND end_piece NOT = colour of own pieces:
+      
+            RETURN TRUE
+         
+         END IF
+      
       END IF
 
-      IF end_piece AND end_piece NOT = colour of own pieces:
-      
-         RETURN TRUE
-         
-      END IF
-      
-   END IF
-
-   IF absolute x_difference = z AND IF absolute y_difference = 0:
+      IF absolute x_difference = z AND IF absolute y_difference = 0:
    
-      IF NOT end_piece:
+         IF NOT end_piece:
       
-         RETURN TRUE
+            RETURN TRUE
          
-      END IF
+         END IF
 
-      IF end_piece AND end_piece NOT = colour of own pieces:
+         IF end_piece AND end_piece NOT = colour of own pieces:
       
-         RETURN TRUE
+            RETURN TRUE
          
-      END IF
+         END IF
       
-   END IF
+      END IF
    
-''' 
-
 ###  Issues during the project and how I resolved them
 Whilst creating this project, I encountered some errors including that there was also a problem which occurred when a pawn was promoted. This error resulted in problems such as the selected piece not appearing on the board. This was fixed by appending the pieces to the pieces list, thus allowing them to be visible on the screen.
 

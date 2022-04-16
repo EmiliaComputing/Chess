@@ -26,6 +26,7 @@ Furthermore, the colours I have used for the chess board are light and dark grey
 The following pseudocode shows how the rook piece moves:
 
 FOR z IN RANGE 8:
+
    y_difference = y position at start - y position at end
    
    x_difference = x position at start - x position at end

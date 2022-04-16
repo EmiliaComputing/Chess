@@ -25,6 +25,8 @@ Furthermore, the colours I have used for the chess board are light and dark grey
 
 The following pseudocode shows how the rook piece moves:
 
+''' 
+
 FOR z IN RANGE 8:
 
    y_difference = y position at start - y position at end
@@ -64,6 +66,8 @@ FOR z IN RANGE 8:
       END IF
       
    END IF
+   
+''' 
 
 ###  Issues during the project and how I resolved them
 Whilst creating this project, I encountered some errors including that there was also a problem which occurred when a pawn was promoted. This error resulted in problems such as the selected piece not appearing on the board. This was fixed by appending the pieces to the pieces list, thus allowing them to be visible on the screen.

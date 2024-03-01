@@ -1,4 +1,5 @@
 # Chess Project
+(completed 2022)
 
 ### Introduction
 I decided to create a working chess game as it is a game I am passionate about. This project is the most important one to me and it is the one which I have spent the most time working on. The target audience is chess players of all ages.
